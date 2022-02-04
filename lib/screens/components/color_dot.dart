@@ -22,13 +22,13 @@ class ColorDot extends StatelessWidget {
         padding: const EdgeInsets.all(defaultPadding / 4),
         decoration: BoxDecoration(
           border: Border.all(
-            color: primaryColor,
+            color: isActive ? primaryColor : Colors.transparent,
           ),
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
           radius: 10,
-          backgroundColor: isActive ? primaryColor : Colors.transparent ,
+          backgroundColor: color,
         ),
       ),
     );

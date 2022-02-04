@@ -40,6 +40,9 @@ class DetailScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             fit: BoxFit.cover,
           ),
+          const SizedBox(
+            height: defaultPadding,
+          ),
           Expanded(
             child: Container(
               padding: const EdgeInsets.fromLTRB(
@@ -55,62 +58,84 @@ class DetailScreen extends StatelessWidget {
                   topRight: Radius.circular(defaultBorderRadius * 3),
                 ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Text(
-                            product.title,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Text(
+                              product.title,
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: defaultPadding,
+                        ),
+                        Text('\$' + product.price.toString(),
                           style: Theme.of(context).textTheme.headline6,
                         ),
-                      ),
-                      const SizedBox(
-                        width: defaultPadding,
-                      ),
-                      Text('\$' + product.price.toString(),
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                    ],
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: defaultPadding,
+                      ],
                     ),
-                    child: Text(
-                        'A Henley shirt is a collarless pullover shirt,'
-                          ' by a round neckline and a placket about 3 to 5 inches '
-                            '(8 to 13cm) long and usually having 2-5 buttons.',
+                    const Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: defaultPadding,
+                      ),
+                      child: Text(
+                          'A Henley shirt is a collarless pullover shirt,'
+                            ' by a round neckline and a placket about 3 to 5 inches '
+                              '(8 to 13cm) long and usually having 2-5 buttons.',
+                      ),
                     ),
-                  ),
-                  const Text(
-                      'Colors',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
+                    const Text(
+                        'Colors',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      ColorDot(
-                        color: circle1,
-                        isActive: false,
-                        press: () {},
+                    const SizedBox(
+                      height: defaultPadding / 2,
+                    ),
+                    Row(
+                      children: [
+                        ColorDot(
+                          color: circle1,
+                          isActive: false,
+                          press: () {},
+                        ),
+                        ColorDot(
+                          color: circle2,
+                          isActive: true,
+                          press: () {},
+                        ),
+                        ColorDot(
+                          color: circle3,
+                          isActive: false,
+                          press: () {},
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: defaultPadding * 1.5,
+                    ),
+                    Center(
+                      child: SizedBox(
+                        height: 48,
+                        width: 200,
+                        child: ElevatedButton(
+                            onPressed: (){},
+                          style: ElevatedButton.styleFrom(
+                              primary: primaryColor,
+                            shape: StadiumBorder(),
+                          ),
+                            child: Text('Add to Cart'),
+                        ),
                       ),
-                      ColorDot(
-                        color: circle2,
-                        isActive: true,
-                        press: () {},
-                      ),
-                      ColorDot(
-                        color: circle3,
-                        isActive: false,
-                        press: () {},
-                      ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
