@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../constants.dart';
 
-class SearchFrom extends StatelessWidget {
-  const SearchFrom({
+class SearchForm extends StatelessWidget {
+  const SearchForm({
     Key? key,
   }) : super(key: key);
 
