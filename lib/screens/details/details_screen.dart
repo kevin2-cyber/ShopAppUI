@@ -128,9 +128,9 @@ class DetailScreen extends StatelessWidget {
                             onPressed: (){},
                           style: ElevatedButton.styleFrom(
                               primary: primaryColor,
-                            shape: StadiumBorder(),
+                            shape: const StadiumBorder(),
                           ),
-                            child: Text('Add to Cart'),
+                            child: const Text('Add to Cart'),
                         ),
                       ),
                     ),
