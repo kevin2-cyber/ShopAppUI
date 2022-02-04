@@ -1,40 +1,25 @@
-import 'package:flutter/material.dart';
+class Category {
+  final String icon, title;
 
-class Product {
-  final String image, title;
-  final int price;
-  final Color bgColor;
-
-  Product({
-    required this.image,
-    required this.title,
-    required this.price,
-    this.bgColor = const Color(0xFFEFEFF2),
-  });
+  Category({required this.icon, required this.title});
 }
 
-List<Product> demo_product = [
-  Product(
-    image: "assets/images/product_0.png",
-    title: "Long Sleeve Shirts",
-    price: 165,
-    bgColor: const Color(0xFFFEFBF9),
+List<Category> demo_categories = [
+  Category(
+    icon: "assets/icons/dress.svg",
+    title: "Dress",
   ),
-  Product(
-    image: "assets/images/product_1.png",
-    title: "Casual Henley Shirts",
-    price: 99,
+  Category(
+    icon: "assets/icons/shirt.svg",
+    title: "Shirt",
   ),
-  Product(
-    image: "assets/images/product_2.png",
-    title: "Curved Hem Shirts",
-    price: 180,
-    bgColor: const Color(0xFFF8FEFB),
+  Category(
+    icon: "assets/icons/pants.svg",
+    title: "Pants",
   ),
-  Product(
-    image: "assets/images/product_3.png",
-    title: "Casual Nolin",
-    price: 149,
-    bgColor: const Color(0xFFEEEEED),
+  Category(
+    icon: "assets/icons/Tshirt.svg",
+    title: "Tshirt",
   ),
 ];
+

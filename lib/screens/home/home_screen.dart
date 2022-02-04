@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app_ui/screens/home/constants.dart';
+import 'package:shop_app_ui/constants.dart';
+import 'package:shop_app_ui/models/Production.dart';
+import 'package:shop_app_ui/screens/components/new_arrival.dart';
+import '../components/categories.dart';
+import '../components/popular.dart';
+import '../components/product_card.dart';
+import '../components/search_form.dart';
+import '../components/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -53,42 +60,27 @@ class HomeScreen extends StatelessWidget {
                 fontSize: 18.0,
               ),
             ),
-            Form(
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: 'Search Items....',
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: outlineInputBorder,
-                  enabledBorder: outlineInputBorder,
-                  focusedBorder: outlineInputBorder,
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: SvgPicture.asset('assets/icons/Search.svg'),
-                  ),
-                  suffixIcon: Padding(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: defaultPadding),
-                    child: SizedBox(
-                      height: 48.0,
-                      width: 48.0,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: primaryColor,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(defaultBorderRadius)))),
-                        child: SvgPicture.asset('assets/icons/Filter.svg'),
-                      ),
-                    ),
-                  ),
-                ),
+            const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: defaultPadding,
               ),
+              child: SearchFrom(),
             ),
+            const Categories(),
+            const SizedBox(
+              height: defaultPadding,
+            ),
+            const NewArrival(),
+            const SizedBox(
+              height: defaultPadding,
+            ),
+            const Popular(),
           ],
         ),
       ),
     );
   }
 }
+
+
+
