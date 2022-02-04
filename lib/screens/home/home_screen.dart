@@ -39,40 +39,42 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(defaultPadding),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              'Explore',
-              style: Theme.of(context).textTheme.headline4?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
-                  ),
-            ),
-            const Text(
-              'Best Outfits for you',
-              style: TextStyle(
-                fontSize: 18.0,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(defaultPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Explore',
+                style: Theme.of(context).textTheme.headline4?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: defaultPadding,
+              const Text(
+                'Best Outfits for you',
+                style: TextStyle(
+                  fontSize: 18.0,
+                ),
               ),
-              child: SearchForm(),
-            ),
-            const Categories(),
-            const SizedBox(
-              height: defaultPadding,
-            ),
-            const NewArrival(),
-            const SizedBox(
-              height: defaultPadding,
-            ),
-            const Popular(),
-          ],
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: defaultPadding,
+                ),
+                child: SearchForm(),
+              ),
+              const Categories(),
+              const SizedBox(
+                height: defaultPadding,
+              ),
+              const NewArrival(),
+              const SizedBox(
+                height: defaultPadding,
+              ),
+              const Popular(),
+            ],
+          ),
         ),
       ),
     );
