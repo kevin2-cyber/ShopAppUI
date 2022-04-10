@@ -1,10 +1,11 @@
+// ignore: file_names
 class Category {
   final String icon, title;
 
   Category({required this.icon, required this.title});
 }
 
-List<Category> demo_categories = [
+List<Category> demoCategories = [
   Category(
     icon: "assets/icons/dress.svg",
     title: "Dress",
@@ -22,4 +23,3 @@ List<Category> demo_categories = [
     title: "Tshirt",
   ),
 ];
-

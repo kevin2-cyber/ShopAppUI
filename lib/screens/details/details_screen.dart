@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app_ui/constants.dart';
-import 'package:shop_app_ui/models/Production.dart';
+import 'package:shop_app_ui/models/models.dart';
 
-import '../components/color_dot.dart';
+import '../components/components.dart';
 
 class DetailScreen extends StatelessWidget {
   const DetailScreen({Key? key, required this.product}) : super(key: key);
@@ -22,14 +22,14 @@ class DetailScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: (){},
-              icon: CircleAvatar(
-                backgroundColor: Colors.white,
-                  child: SvgPicture.asset(
-                      'assets/icons/Heart.svg',
-                    height: 20.0,
-                  ),
+            onPressed: () {},
+            icon: CircleAvatar(
+              backgroundColor: Colors.white,
+              child: SvgPicture.asset(
+                'assets/icons/Heart.svg',
+                height: 20.0,
               ),
+            ),
           ),
         ],
       ),
@@ -46,10 +46,10 @@ class DetailScreen extends StatelessWidget {
           Expanded(
             child: Container(
               padding: const EdgeInsets.fromLTRB(
-                  defaultPadding,
-                  defaultPadding * 2,
-                  defaultPadding,
-                  defaultPadding,
+                defaultPadding,
+                defaultPadding * 2,
+                defaultPadding,
+                defaultPadding,
               ),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -66,30 +66,31 @@ class DetailScreen extends StatelessWidget {
                       children: <Widget>[
                         Expanded(
                           child: Text(
-                              product.title,
+                            product.title,
                             style: Theme.of(context).textTheme.headline6,
                           ),
                         ),
                         const SizedBox(
                           width: defaultPadding,
                         ),
-                        Text('\$' + product.price.toString(),
+                        Text(
+                          '\$' + product.price.toString(),
                           style: Theme.of(context).textTheme.headline6,
                         ),
                       ],
                     ),
                     const Padding(
                       padding: EdgeInsets.symmetric(
-                          vertical: defaultPadding,
+                        vertical: defaultPadding,
                       ),
                       child: Text(
-                          'A Henley shirt is a collarless pullover shirt,'
-                            ' by a round neckline and a placket about 3 to 5 inches '
-                              '(8 to 13cm) long and usually having 2-5 buttons.',
+                        'A Henley shirt is a collarless pullover shirt,'
+                        ' by a round neckline and a placket about 3 to 5 inches '
+                        '(8 to 13cm) long and usually having 2-5 buttons.',
                       ),
                     ),
                     const Text(
-                        'Colors',
+                      'Colors',
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -125,12 +126,12 @@ class DetailScreen extends StatelessWidget {
                         height: 48,
                         width: 200,
                         child: ElevatedButton(
-                            onPressed: (){},
+                          onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                              primary: primaryColor,
+                            primary: primaryColor,
                             shape: const StadiumBorder(),
                           ),
-                            child: const Text('Add to Cart'),
+                          child: const Text('Add to Cart'),
                         ),
                       ),
                     ),
@@ -144,4 +145,3 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
-

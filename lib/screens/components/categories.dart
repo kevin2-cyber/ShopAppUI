@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
-import '../../models/Category.dart';
-import 'category_card.dart';
+import '../../models/models.dart';
+import 'components.dart';
 
 class Categories extends StatelessWidget {
   const Categories({
@@ -15,15 +15,15 @@ class Categories extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: List.generate(
-          demo_categories.length,
-              (index) => Padding(
+          demoCategories.length,
+          (index) => Padding(
             padding: const EdgeInsets.only(
               right: defaultPadding,
             ),
             child: CategoryCard(
-              title: demo_categories[index].title,
-              icon: demo_categories[index].icon,
-              press: () {  },
+              title: demoCategories[index].title,
+              icon: demoCategories[index].icon,
+              press: () {},
             ),
           ),
         ),
